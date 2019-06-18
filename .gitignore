@@ -2,5 +2,5 @@ nimcache/
 
 
 
-__pycach__/
+__pycache__/
 .mypy_cache/
