@@ -1,40 +1,37 @@
-cd
-mkdir
-ls
-rm
-rmdir
-make
+# NIM
 
-clang -0 -gdb3 outputfile inputfile.c
+## Compile on Windows
 
+nim c --cc:vcc --threads:on --tlsEmulation:off --app:lib --out:mymodule.pyd mymodule
+nim c -r mymodule
+c           ->  compile
+--run or -r -> run compiled exe (if its an app)
 
+--cc        -> cross compiler
+:vcc        -> microscoft visual c compiler
+:gcc        -> gcc compiler
+:llvm-gcc   ->
+:clang      -> clang compiler
 
+--cpu      -> what cpu architecture
+:amd64      -> 64-bit
+:i386       -> x86 32-bit
 
+--os
+:linux
 
-Write functions as .py or .pyx
-    cython xxx.py(x) --> xxx.c
+--app       -> output type (console app, gui, dynamic lib, static lib)
+:lib        -> dynamic lib (DLL)
+
+-out: or -o:  -> name of output file
+
+-d
+:release  -> optimise for release
+:mingw    -> cross compile for windows
+
+finally, name of .nim file to compile
+
+## CYTHON
 
 Create compile.py that cythonizes .py(x)
     python compile.py build_ext --inplace   --> xxx.c, xxx.platform.so/.pyd
-
-Import xxx.pyd to use
-    import xxx
-
-if .sp/.pyd present, prefers them
-
-Put all xxx.pyx / .c / .so / .pyd / build  into module folder yyy
-create empty __init__.py
-
-Import file xxx of module yyy
-    from yyy import xxx
-    xxx.zzz() to use
-
-Import all files
-    from yyy import *
-    xxx.zzz() to use
-
-
-put file into __init__.py
-Import module
-    import yyy
-    xxx.zzz() to use
