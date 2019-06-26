@@ -2,7 +2,7 @@
 
 ## Compile on Windows
 
-nim c --cc:vcc --threads:on --tlsEmulation:off --app:lib --out:mymodule.pyd mymodule
+nim c --cc:gcc --threads:on --tlsEmulation:off --app:lib --out:mymodule.pyd mymodule
 nim c -r mymodule
 c           ->  compile
 --run or -r -> run compiled exe (if its an app)
